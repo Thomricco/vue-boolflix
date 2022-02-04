@@ -4,8 +4,8 @@
            
             <div class="film-descrizione">
                 <img :src="`https://www.themoviedb.org/t/p/original${serie.poster_path}`" alt="">
-                <p>{{serie.title}}</p>
-                <p>{{serie.original_title}}</p>
+                <p>{{serie.name}}</p>
+                <p>{{serie.original_name}}</p>
                 <p>{{serie.original_language}}</p>
                 <p>{{serie.vote_average}}</p>
             </div>
