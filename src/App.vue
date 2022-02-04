@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <search-bar @search="searchMovies" />
-    <main-container :films="films" :series="series"/>
+    <main-container :films="films" :series="series" />
+
   </div>
 </template>
 
@@ -20,6 +21,8 @@ export default {
     return {
       films: [],
       series: [],
+      votiMediArrotondati: [],
+      
     };
   },
 
@@ -27,6 +30,12 @@ export default {
     axios.get("https://api.themoviedb.org/3/movie/popular?&api_key=e99307154c6dfb0b4750f6603256716d").then((response) => {
         console.log(response);
         this.films = response.data.results;
+        this.votiMediArrotondati = [];
+        for (let i = 0; i < this.films.length; i++) {
+          const film = this.films[i];
+          const voto = Math.round(film.vote_average)
+          this.votiMediArrotondati.push(voto)
+        }
       });
       axios.get("https://api.themoviedb.org/3/tv/popular?&api_key=e99307154c6dfb0b4750f6603256716d").then((res) => {
         
@@ -47,7 +56,13 @@ export default {
         this.series = res.data.results;
 
       })
-  }
+  },
+  numeroDecimale() {
+      
+      
+    }
+  
+  
 };
 </script>
 

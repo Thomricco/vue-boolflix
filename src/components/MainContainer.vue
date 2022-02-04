@@ -3,7 +3,7 @@
         <div class="container">
             <div class="ins">
                 
-                <h1>MOVIES</h1>
+                <h2>FILM DEL MOMENTO</h2>
             </div>
             <div class="container-box-img">
                 
@@ -15,7 +15,7 @@
 
             <div class="ins">
                 
-                <h1>SERIE TV</h1>
+                <h2>SERIE TV DEL MOMENTO</h2>
             </div>
 
             <div class="container-box-img">
@@ -54,7 +54,7 @@ main {
     background-color: black;
     .container {
         .ins {
-            text-align: center;
+            
             color: #fff;
             padding: 30px;
         }

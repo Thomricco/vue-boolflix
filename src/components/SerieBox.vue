@@ -1,8 +1,8 @@
 <template>
     <header>
-        <div class="film-img">
+        <div class="serie-img">
            
-            <div class="film-descrizione">
+            <div class="serie-descrizione">
                 <img :src="`https://www.themoviedb.org/t/p/original${serie.poster_path}`" alt="">
                 <p>{{serie.name}}</p>
                 <p>{{serie.original_name}}</p>
@@ -30,14 +30,14 @@ export default {
 header {
     margin: 0 auto;
 
-    .film-img {
+    .serie-img {
     width: 200px;
     height: 350px;
     border: 1px gray solid;
     margin: 10px;
 
 
-    .film-descrizione {
+    .serie-descrizione {
         cursor: pointer;
         width: 200px;
         height: 350px;
