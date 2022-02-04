@@ -27,7 +27,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.film-img {
+header {
+    margin: 0 auto;
+
+    .film-img {
     width: 200px;
     height: 350px;
     border: 1px gray solid;
@@ -39,7 +42,7 @@ export default {
         width: 200px;
         height: 350px;
         background-color: black;
-        color: #fff;
+        color: black;
         font-size: 15px;
         
 
@@ -63,6 +66,7 @@ export default {
         
     }
 
+}
 }
 
 
