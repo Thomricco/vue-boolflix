@@ -17,7 +17,8 @@ export default {
         FilmBox,
     },
     props: {
-        films: Array
+        films: Array,
+        series: Array
     }
     
 }

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <search-bar @search="filterResult" />
-    <main-container :films="filmsFiltered" />
+    <search-bar @search="searchMovies" />
+    <main-container :films="films" />
   </div>
 </template>
 
@@ -19,36 +19,35 @@ export default {
   data() {
     return {
       films: [],
-      filmsFiltered: [],
+      series: [],
     };
   },
+
   mounted() {
-    axios
-      .get(
-        "https://api.themoviedb.org/3/search/movie?query=ritorno+al+futuro&api_key=e99307154c6dfb0b4750f6603256716d"
-      )
-      .then((response) => {
+    axios.get("https://api.themoviedb.org/3/movie/popular?&api_key=e99307154c6dfb0b4750f6603256716d").then((response) => {
         console.log(response);
         this.films = response.data.results;
-        this.filmsFiltered = response.data.results;
+      });
+      axios.get("https://api.themoviedb.org/3/tv/popular?&api_key=e99307154c6dfb0b4750f6603256716d").then((response) => {
+        console.log(response);
+        this.series = response.data.results;
       });
   },
   methods: {
-    filterResult(keyword) {
+    searchMovies(query) {
+      axios.get(`https://api.themoviedb.org/3/search/movie?query=${query}&api_key=e99307154c6dfb0b4750f6603256716d`).then((res) => {
+        this.films = res.data.results;
 
-      /*this.filmsFiltered = [];
-      for (let index = 0; index < this.films.length; index++) {
-        const film = this.films[index];
-        if (film.title.toLowerCase().includes(keyword.toLowerCase())) {
-          this.filmsFiltered.push(film);
-        }
-      }*/
-  
-      this.filmsFiltered = this.films.filter((film) => {
-        return film.title.toLowerCase().includes(keyword.toLowerCase());
-      });
-    },
+      })
+  }
+
   },
+  searchSeries(query) {
+      axios.get(`https://api.themoviedb.org/3/search/tv?query=${query}&api_key=e99307154c6dfb0b4750f6603256716d`).then((res) => {
+        this.series = res.data.results;
+
+      })
+  }
 };
 </script>
 
@@ -56,3 +55,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import "./style/main.scss";
 </style>
+
+
+
+
