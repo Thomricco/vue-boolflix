@@ -4,17 +4,24 @@
             <film-box v-for="film in films"
             :key=film.id
             :film="film" />
+
+            <serie-box v-for="serie in series"
+            :key=serie.id
+            :serie="serie" />
         </div>
+        
     </main>
 </template>
 
 <script>
 
 import FilmBox from './FilmBox.vue'
+import SerieBox from './SerieBox.vue'
 
 export default {
     components: {
         FilmBox,
+        SerieBox
     },
     props: {
         films: Array,

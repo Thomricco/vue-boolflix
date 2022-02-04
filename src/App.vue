@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <search-bar @search="searchMovies" />
-    <main-container :films="films" />
+    <main-container :films="films" :series="series"/>
   </div>
 </template>
 
@@ -28,9 +28,9 @@ export default {
         console.log(response);
         this.films = response.data.results;
       });
-      axios.get("https://api.themoviedb.org/3/tv/popular?&api_key=e99307154c6dfb0b4750f6603256716d").then((response) => {
-        console.log(response);
-        this.series = response.data.results;
+      axios.get("https://api.themoviedb.org/3/tv/popular?&api_key=e99307154c6dfb0b4750f6603256716d").then((res) => {
+        
+        this.series = res.data.results;
       });
   },
   methods: {

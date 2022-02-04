@@ -3,8 +3,8 @@
         <nav>
             <div>
                 <input type="text" placeholder="Search"
-                v-model="keywordSearch"
-                @keyup.enter="$emit('search', keywordSearch)" />
+                v-model="movieSearch"
+                @keyup.enter="$emit('search', movieSearch)" />
             </div>
         </nav>
     </header>
@@ -15,7 +15,7 @@
 export default {
     data() {
         return {
-            keywordSearch: ''
+            movieSearch: '',
         }
     }
     
