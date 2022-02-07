@@ -15,7 +15,9 @@
                     <p v-if="serie.original_language == 'es'"><img src="https://flagcdn.com/16x12/es.png" srcset="https://flagcdn.com/32x24/es.png 2x,https://flagcdn.com/48x36/es.png 3x" width="16" height="12" alt="Spain"/></p>
                     <p v-if="serie.original_language == 'fr'"><img src="https://flagcdn.com/16x12/fr.png" srcset="https://flagcdn.com/32x24/fr.png 2x,https://flagcdn.com/48x36/fr.png 3x" width="16" height="12" alt="France"/></p>
                     <p v-else>{{ serie.original_language }}</p>
-                    <p>{{ Math.round(serie.vote_average) }}"</p>
+                    
+                    <p v-if="serie.vote_average == serie.vote_average">&star;</p>
+                    <p v-else>{{ Math.round(serie.vote_average) }}</p>
                 </div>
             </div>
         </div>
